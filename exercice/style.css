@@ -1,9 +1,9 @@
 body{
-  background-color: rgb(245, 220, 233);
+  background-color: rgb(211, 174, 193);
 }
 .article-travel{
 
-    background-color:rgb(240, 213, 213);
+    background-color:rgb(245, 220, 233);
     text-align: center;
   }
   
@@ -18,6 +18,8 @@ body{
   .img-travel{
     width: 500px;
     border: 10px solid black;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgba(38, 20, 28, 0.961);
    
   }
   
@@ -36,7 +38,8 @@ body{
     text-decoration: none;
     border: 1px solid  rgb(184, 128, 146);
     text-align: center;
-}
+   text-align: center;
+  }  
 
 .btn:hover {
     background-color:white;
