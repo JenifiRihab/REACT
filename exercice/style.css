@@ -1,0 +1,44 @@
+body{
+  background-color: rgb(245, 220, 233);
+}
+.article-travel{
+
+    background-color:rgb(240, 213, 213);
+    text-align: center;
+  }
+  
+  .title-travel{
+    font-size: 30px;
+    text-decoration: underline;
+    font-size: xx-large ;
+    font-family: fantasy ;
+
+  }
+
+  .img-travel{
+    width: 500px;
+    border: 10px solid black;
+   
+  }
+  
+
+  .text-travel {
+    color: rgb(26, 6, 6);
+    font-size: xx-large ;
+  }
+
+  .btn {
+    background-color: rgb(184, 128, 146);
+    color:white;
+    border-radius: 50px;
+    padding:  20px 50px;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid  rgb(184, 128, 146);
+    text-align: center;
+}
+
+.btn:hover {
+    background-color:white;
+    color:  rgb(184, 128, 146);
+}
