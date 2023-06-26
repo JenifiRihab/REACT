@@ -50,45 +50,98 @@
 
 
 
+// // SOLUTION:
+// const button = document.querySelector("button");
+
+// // au clicksur le button:
+//     button.addEventListener("click", () => {
+
+// // je sible l'element dans le DOM quI a l'ID travel:    
+//     const divRoot = document.querySelector("#travel");
+
+//  // je créé une bolise article:   
+//     const articleElement = createNodeElement("article", "article-travel");
+//     divRoot.appendChild(articleElement);
+
+//   // créer un titre :  
+//     const titleElement = createNodeElement("h1", "title-travel", "COME SEE THE WORLD ");
+//     articleElement.appendChild(titleElement);
+
+//  // créer une image:
+//     const imgElement = createNodeElement( "img", "img-travel", "", "../exercice/img/photos-de-voyage-piscine-debordement-hotel-reve.jpg");
+//     articleElement.appendChild(imgElement);
+
+ 
+//  // créer un text:
+//     const textElement = createNodeElement("p", "text-travel", "Imaginez un peignoir jeté sur une chaise longue savamment placée aux abords de la piscine d’un hôtel chic, dont la terrasse surplombe la mer… D’ailleurs, n’hésitez pas à jeter un oeil à ces piscines de rêve autour du monde.");
+//     articleElement.appendChild(textElement);
+// });
+
+
+
+// //fonction "(tagType, className, text et imgSrc)" de création d'élément sur le DOM avec différents paramètre et j'ai utilisée le return dans ma fonction pour pouvoir récupérer l'élément créé  et je ferai appel à la fonction plus tard pour créer mes élément selon ou je souhaite. L'élément récupérée pourra ainsi être inséré dans le dom:
+// const createNodeElement = (tagType, className, text = "", imgSrc = "") => {
+
+// //créer un élément appelé selon le paramètre:
+//     const nodeElement = document.createElement(tagType);
+// // class:
+//     nodeElement.setAttribute("class", className);
+// // image:
+//     nodeElement.setAttribute("src", imgSrc);
+// // text:
+//     nodeElement.textContent = text;
+
+//     return nodeElement;
+// };
+
+
+
+
+
+// ____________________
+
 // SOLUTION:
+
+
 const button = document.querySelector("button");
+ // au click sur le button:
+button.addEventListener("click", () => {
 
-// au clicksur le button:
-    button.addEventListener("click", () => {
-
-// je sible l'element dans le DOM quI a l'ID travel:    
     const divRoot = document.querySelector("#travel");
-
- // je créé une bolise article:   
-    const articleElement = createNodeElement("article", "article-travel");
+ // créer une bolise article:
+    const articleElement = createNodeElement("article", {class: "article-travel",});
     divRoot.appendChild(articleElement);
 
-  // créer un titre :  
-    const titleElement = createNodeElement("h1", "title-travel", "COME SEE THE WORLD ");
+ // créer un titre :
+    const titleElement = createNodeElement("h1",{class: "title-travel",},"COME SEE THE WORLD");
     articleElement.appendChild(titleElement);
 
  // créer une image:
-    const imgElement = createNodeElement( "img", "img-travel", "", "../exercice/img/photos-de-voyage-piscine-debordement-hotel-reve.jpg");
+    const imgElement = createNodeElement("img",{class: "img-travel",src: "../exercice/img/photos-de-voyage-piscine-debordement-hotel-reve.jpg",},"");
     articleElement.appendChild(imgElement);
 
  // créer un text:
-    const textElement = createNodeElement("p", "text-travel", "Imaginez un peignoir jeté sur une chaise longue savamment placée aux abords de la piscine d’un hôtel chic, dont la terrasse surplombe la mer… D’ailleurs, n’hésitez pas à jeter un oeil à ces piscines de rêve autour du monde.");
+
+    const textElement = createNodeElement("p",{class: "text-travel",},"Imaginez un peignoir jeté sur une chaise longue savamment placée aux abords de la piscine d’un hôtel chic, dont la terrasse surplombe la mer… D’ailleurs, n’hésitez pas à jeter un oeil à ces piscines de rêve autour du monde.");
     articleElement.appendChild(textElement);
+
 });
 
 
 
-//fonction "(tagType, className, text et imgSrc)" de création d'élément sur le DOM avec différents paramètre et j'ai utilisée le return dans ma fonction pour pouvoir récupérer l'élément créé  et je ferai appel à la fonction plus tard pour créer mes élément selon ou je souhaite. L'élément récupérée pourra ainsi être inséré dans le dom:
-const createNodeElement = (tagType, className, text = "", imgSrc = "") => {
+ //fonction "(tagType, className, text et imgSrc)" de création d'élément sur le DOM avec différents paramètre et j'ai utilisée le return dans ma fonction pour pouvoir récupérer l'élément créé  et je ferai appel à la fonction plus tard pour créer mes élément selon ou je souhaite. L'élément récupérée pourra ainsi être inséré dans le dom:
 
-//créer un élément appelé selon le paramètre:
-    const nodeElement = document.createElement(tagType);
-// class:
-    nodeElement.setAttribute("class", className);
-// image:
-    nodeElement.setAttribute("src", imgSrc);
-// text:
-    nodeElement.textContent = text;
+const createNodeElement = (tagType, attributes, text = "") => {
+  const nodeElement = document.createElement(tagType);
 
-    return nodeElement;
+  // on fait une boucle sur l'objet attributes
+  // et pour chaque propriété trouvée (class, src etc)
+  // on ajoute un attribut avec en type le nom de la propriété et en valeur sa valeur
+  for (const property in attributes) {
+    nodeElement.setAttribute(property, attributes[property]);
+  }
+
+  nodeElement.textContent = text;
+
+  return nodeElement;
 };
