@@ -76,11 +76,18 @@ const button = document.querySelector("button");
     articleElement.appendChild(textElement);
 });
 
-const createNodeElement = (tagType, className, text = "", imgSrc = "") => {
-    const nodeElement = document.createElement(tagType);
-    nodeElement.setAttribute("class", className);
 
+
+//fonction "(tagType, className, text et imgSrc)" de création d'élément sur le DOM avec différents paramètre et j'ai utilisée le return dans ma fonction pour pouvoir récupérer l'élément créé  et je ferai appel à la fonction plus tard pour créer mes élément selon ou je souhaite. L'élément récupérée pourra ainsi être inséré dans le dom:
+const createNodeElement = (tagType, className, text = "", imgSrc = "") => {
+
+//créer un élément appelé selon le paramètre:
+    const nodeElement = document.createElement(tagType);
+// class:
+    nodeElement.setAttribute("class", className);
+// image:
     nodeElement.setAttribute("src", imgSrc);
+// text:
     nodeElement.textContent = text;
 
     return nodeElement;
