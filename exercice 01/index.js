@@ -117,7 +117,9 @@ button.addEventListener("click", () => {
     articleElement.appendChild(titleElement);
 
  // créer une image:
-    const imgElement = createNodeElement("img",{class: "img-travel",src: "../exercice/img/photos-de-voyage-piscine-debordement-hotel-reve.jpg",},"");
+    const imgElement = createNodeElement("img",{class: "img-travel",
+    src : "../exercice 01/img/photos-de-voyage-piscine-debordement-hotel-reve.jpg",
+   },"");
     articleElement.appendChild(imgElement);
 
  // créer un text:
